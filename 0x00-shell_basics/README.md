@@ -1,1 +1,1 @@
-a script that changes the working directory to the previous one.
+a scrit that will list all fileseven ones with names beginning with a period character

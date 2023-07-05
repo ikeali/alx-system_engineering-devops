@@ -1,1 +1,1 @@
- symbolic link to /bin/ls, named __ls__.
+a script to copy hmtl

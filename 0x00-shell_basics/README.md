@@ -1,1 +1,1 @@
-scriptto delete the file betty
+script to delete the directory my_directory

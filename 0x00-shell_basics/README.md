@@ -1,1 +1,1 @@
-script to display hidden files starting with .
+script to display current direcrory content

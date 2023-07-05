@@ -1,1 +1,1 @@
-script to display in long format
+script to display hidden files starting with .

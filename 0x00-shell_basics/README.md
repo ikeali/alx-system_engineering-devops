@@ -1,1 +1,1 @@
-script to display current direcrory content
+script that creates a directory named my_first_directory in the /tmp/ directory.

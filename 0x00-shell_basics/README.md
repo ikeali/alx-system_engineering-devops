@@ -1,1 +1,1 @@
-a script that creates the directorielcome
+ a command that lists all the files and directories 

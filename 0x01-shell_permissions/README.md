@@ -1,1 +1,1 @@
-a script that changes the owner and the group owner
+a script that changes the owner of the file hello to betty only

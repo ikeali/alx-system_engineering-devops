@@ -1,1 +1,1 @@
-a scrpt that add execute permission to the owner, group and others to the file hello
+a scripts that sets permission

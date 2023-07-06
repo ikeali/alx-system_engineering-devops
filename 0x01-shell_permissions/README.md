@@ -1,1 +1,1 @@
-a script hello
+script to add execute permission

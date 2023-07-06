@@ -1,1 +1,1 @@
-create a magic file school.mgc that can be used with the command file
+a script that creates an empty file

@@ -1,1 +1,1 @@
-script that add execute permission to all subdirectories
+a script that creates a directory called my_dir

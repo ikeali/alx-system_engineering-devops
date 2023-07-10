@@ -1,1 +1,1 @@
-a script that takes a list of
+display lines containing patterns

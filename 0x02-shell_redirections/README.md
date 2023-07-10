@@ -1,1 +1,1 @@
-a script that deletes 
+script that counts the number

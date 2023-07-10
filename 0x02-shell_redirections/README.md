@@ -1,1 +1,1 @@
-a scripts that writes into a file
+a script that duplicates

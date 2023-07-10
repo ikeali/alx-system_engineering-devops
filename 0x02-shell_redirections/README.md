@@ -1,1 +1,1 @@
-a script that displays 10 newest files
+a script that takes a list of

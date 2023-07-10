@@ -1,1 +1,1 @@
-a scrpt that creates exactly the file name
+a scripts that writes into a file

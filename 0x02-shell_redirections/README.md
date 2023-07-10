@@ -1,1 +1,1 @@
-what about 2
+script to display the last 10 lines

@@ -1,1 +1,1 @@
-a script that duplicates
+a script that deletes 

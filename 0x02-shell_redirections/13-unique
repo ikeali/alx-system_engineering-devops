@@ -1,2 +1,2 @@
 #!/bin/bash
-from collections import Counter
+sort | uniq -u

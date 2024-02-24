@@ -1,0 +1,37 @@
+Server 2 (Replica):
+
+Why: Adds redundancy and helps distribute the load. In case Server 1 fails, Server 2 can handle requests.
+Server 3 (Database Cluster):
+
+Why: Introduces high availability and fault tolerance for the database. The database cluster ensures data consistency and minimizes downtime.
+Load Balancer (HAProxy):
+
+Why: Distributes incoming traffic across multiple servers, improving performance and ensuring high availability.
+Load Balancer Configuration:
+Distribution Algorithm:
+
+Use Round Robin: Distributes incoming requests equally among the available servers.
+Active-Active or Active-Passive Setup:
+
+Active-Active: Both Server 1 and Server 2 actively handle requests simultaneously, providing load balancing and redundancy.
+Active-Passive: Server 2 remains inactive until Server 1 fails. When Server 1 fails, Server 2 becomes active.
+Database Primary-Replica (Master-Slave) Cluster:
+
+How It Works:
+The Primary (Master) node handles write operations, and the Replica (Slave) node replicates data from the Primary. If the Primary fails, the Replica can take over.
+Difference Between Primary and Replica:
+
+The Primary handles write operations and is the authoritative source for data.
+The Replica mirrors the data from the Primary and is used for read operations. It can take over if the Primary fails.
+
+Issues with this Infrastructure:
+
+Single Points of Failure (SPOF):
+Server 3 (Database Cluster) could be a potential single point of failure if not properly configured. Consider adding more replicas or using a distributed database.
+
+Security Issues:
+No firewall mentioned: Implement a firewall to control incoming and outgoing traffic, enhancing security.
+No HTTPS: Implement HTTPS to encrypt data in transit and enhance overall security.
+
+No Monitoring:
+Lack of monitoring tools: Implement monitoring solutions to track server performance, detect issues, and facilitate proactive troubleshooting.

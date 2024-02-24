@@ -1,0 +1,32 @@
+
+What is a Server:
+
+A server is a computer or system that provides services to other computers or clients (users) over a network.
+Role of the Domain Name:
+
+The domain name (foobar.com) is a human-readable address that maps to the server's IP address. It provides a user-friendly way to access the website.
+Type of DNS Record for www.foobar.com:
+
+The DNS record for www in www.foobar.com is a CNAME (Canonical Name) record, pointing to the domain itself.
+Role of the Web Server:
+
+The web server (Nginx) handles incoming HTTP requests, serves static files, and forwards dynamic requests to the application server.
+Role of the Application Server:
+
+The application server processes dynamic content, executes the application code, and communicates with the database to generate responses to user requests.
+Role of the Database:
+
+MySQL stores and manages the website's data, including user information, content, and other relevant information.
+Server Communication with User's Computer:
+
+The server communicates with the user's computer over the internet using the HTTP or HTTPS protocol, delivering web pages and data in response to user requests.
+Issues with this Infrastructure:
+Single Point of Failure (SPOF):
+
+The entire infrastructure relies on a single server. If it fails, the website becomes unavailable. To address this, consider introducing redundancy, load balancing, or a failover system.
+Downtime during Maintenance:
+
+When deploying new code or performing maintenance, the web server often needs to be restarted, causing downtime. Implementing techniques like rolling deployments or using a secondary server can help minimize downtime.
+Limited Scalability:
+
+With only one server, the infrastructure may struggle to handle a large volume of incoming traffic. Scaling options like load balancing, horizontal scaling (adding more servers), or utilizing cloud services should be considered for improved scalability.

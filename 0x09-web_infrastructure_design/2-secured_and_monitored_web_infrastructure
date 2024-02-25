@@ -1,0 +1,27 @@
+Why Firewalls?
+
+Firewalls help control and secure network traffic, preventing unauthorized access and protecting against potential cyber threats, ensuring the integrity and confidentiality of data.
+Why HTTPS?
+
+HTTPS encrypts data during transmission, preventing attackers from intercepting or tampering with sensitive information. It establishes a secure communication channel, enhancing user trust and protecting against various cyber threats.
+Why Monitoring?
+
+Monitoring provides insights into system health, performance, and potential issues. It helps in proactively identifying and addressing issues before they impact users, ensuring continuous availability and reliability.
+How Monitoring Tool Collects Data:
+
+Monitoring tools collect data through agents or clients installed on servers. These agents continuously gather metrics, logs, and other relevant information, transmitting it to a centralized monitoring platform (e.g., Sumo Logic) for analysis and reporting.
+Monitoring Web Server QPS:
+
+To monitor web server QPS (Queries Per Second), configure the monitoring tool to track and analyze the incoming request rate to the web server. Set up alerts to notify administrators if the QPS exceeds predefined thresholds, allowing for proactive intervention.
+
+
+
+Terminating SSL at Load Balancer Level:
+
+Issue: Terminating SSL at the load balancer exposes decrypted traffic between the load balancer and backend servers. This poses a security risk as the internal network may not be as secure as the external one.
+Single MySQL Server for Writes:
+
+Issue: Having only one MySQL server capable of accepting writes creates a single point of failure. If this server goes down, write operations will fail, impacting the application's functionality.
+Uniform Components Across Servers:
+
+Issue: Using identical components for all servers increases the risk of a system-wide failure. If there's a flaw or vulnerability in a specific component, it can potentially affect all servers simultaneously, leading to widespread issues. It's advisable to diversify components to mitigate this risk.

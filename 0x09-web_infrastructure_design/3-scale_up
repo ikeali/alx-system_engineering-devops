@@ -1,0 +1,15 @@
+Why Web Server?
+
+Separating the web server from the application server enables the efficient handling of static content, enhancing performance and scalability. It also simplifies the overall architecture by segregating responsibilities.
+Why Application Server?
+
+The application server hosts and executes the core business logic of the application. By separating it from the web server, you achieve a modular architecture that is easier to maintain, scale, and update independently.
+Why Database Server?
+
+A dedicated database server ensures that data storage and retrieval are handled independently of the application logic. This separation improves scalability, allows for specialized database optimizations, and simplifies maintenance.
+Why Load Balancer (HAProxy)?
+
+Load balancing distributes incoming traffic, preventing overload on a single server and improving performance. Configuring HAProxy as a cluster enhances reliability and fault tolerance, ensuring continuous service availability even if one load balancer fails.
+Why Additional Server?
+
+Adding an extra server enhances redundancy and fault tolerance. It provides a backup in case one server experiences issues, contributing to a more robust and reliable infrastructure.

@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-
-openssl genpkey -algorithm RSA -out school.pem -aes256 -pass pass:betty -aes-256-cbc -pkeyopt rsa_keygen_bits:4096
-
-# Extract public key from the private key
-openssl rsa -pubout -in school.pem -out school.pub.pem
-
+# Bash script that creates an RSA key pair
+#ssh-keygen -b 4096 -P betty -f school
+ssh-keygen -t rsa -b 4096 -P betty -f school

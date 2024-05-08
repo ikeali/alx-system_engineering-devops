@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""This module makes a request to the reddit api""":wq
+
+
 import requests
 
 def number_of_subscribers(subreddit):

@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-"""This module makes a request to the reddit api"""
 import requests
 
 def number_of_subscribers(subreddit):
@@ -15,7 +13,7 @@ def number_of_subscribers(subreddit):
     if subreddit is None:
         return 0
 
-    headers = {'User-Agent': 'My User Agent 1.0'}
+    headers = {'User-Agent': 'YourBot/1.0'}  # Update User-Agent header
     
     try:
         url = f'https://www.reddit.com/r/{subreddit}/about.json'

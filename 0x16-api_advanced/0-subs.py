@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module makes a request to the reddit api""":wq
+"""This module makes a request to the reddit api"""
 
 
 import requests

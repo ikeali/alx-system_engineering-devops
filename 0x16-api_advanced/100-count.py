@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """ raddit api"""
 
@@ -53,4 +52,3 @@ def count_words(subreddit, word_list, after="", count=[]):
                     print("{}: {}".format(word_list[i].lower(), count[i]))
         else:
             count_words(subreddit, word_list, after, count)
-

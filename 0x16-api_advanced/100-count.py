@@ -1,49 +1,54 @@
 #!/usr/bin/python3
-"""This module makes a request to the reddit api"""
+""" raddit api"""
+
+import json
 import requests
 
 
-def count_words(subreddit, word_list, after='', tok={}):
-    """
-    recursively calls the reddit api to fetch all hot articles
-    and counts how many times the keywords
-    appear in those articles
-    """
-    headers = {
-        'User-Agent': 'My User Agent 1.0',
-    }
-    try:
+def count_words(subreddit, word_list, after="", count=[]):
+    """count all words"""
+
+    if after == "":
+        count = [0] * len(word_list)
+
+    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
+    request = requests.get(url,
+                           params={'after': after},
+                           allow_redirects=False,
+                           headers={'user-agent': 'bhalut'})
+
+    if request.status_code == 200:
+        data = request.json()
+
+        for topic in (data['data']['children']):
+            for word in topic['data']['title'].split():
+                for i in range(len(word_list)):
+                    if word_list[i].lower() == word.lower():
+                        count[i] += 1
+
+        after = data['data']['after']
         if after is None:
-            sorted_tok = sorted(tok.items(), key=lambda x: x[1], reverse=True)
-            dict_sorted_tok = dict(sorted_tok)
-            for key, value in dict_sorted_tok.items():
-                if value != 0:
-                    print('{}: {}'.format(key, value))
-            return None
-        if after == '':
-            res = requests.get('https://www.reddit.com/r/'+subreddit
-                               + '/hot.json', headers=headers,
-                               allow_redirects=False)
-            # Initializing the tok dictionary that holds the count
-            word_list = sorted(word_list)
-            for key in word_list:
-                tok[key.lower()] = 0
+            save = []
+            for i in range(len(word_list)):
+                for j in range(i + 1, len(word_list)):
+                    if word_list[i].lower() == word_list[j].lower():
+                        save.append(j)
+                        count[i] += count[j]
+
+            for i in range(len(word_list)):
+                for j in range(i, len(word_list)):
+                    if (count[j] > count[i] or
+                            (word_list[i] > word_list[j] and
+                             count[j] == count[i])):
+                        aux = count[i]
+                        count[i] = count[j]
+                        count[j] = aux
+                        aux = word_list[i]
+                        word_list[i] = word_list[j]
+                        word_list[j] = aux
+
+            for i in range(len(word_list)):
+                if (count[i] > 0) and i not in save:
+                    print("{}: {}".format(word_list[i].lower(), count[i]))
         else:
-            res = requests.get('https://www.reddit.com/r/'+subreddit
-                               + '/hot.json?after={}'.format(after),
-                               headers=headers, allow_redirects=False)
-        subreddit_data = res.json()
-    except Exception as e:
-        return (None)
-    if 'error' in subreddit_data.keys():
-        return (None)
-    details = subreddit_data['data']['children']
-    tokens = []
-    for detail in details:
-        tokens = detail['data']['title'].split(' ')
-        for token in tokens:
-            token = token.lower()
-            if token in word_list:
-                tok['{}'.format(token)] = tok['{}'.format(token)] + 1
-    after = subreddit_data['data']['after']
-    return (count_words(subreddit, word_list, after, tok))
+            count_words(subreddit, word_list, after, count)
